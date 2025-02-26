@@ -1,0 +1,11 @@
+backports.tarfile==1.2.0
+h2==4.2.0
+importlib-metadata==8.0.0
+ipykernel==6.29.5
+jaraco.collections==5.1.0
+openpyxl==3.1.5
+pip-chill==1.0.3
+plotly-express==0.4.1
+streamlit==1.42.2
+supabase==2.13.0
+tomli==2.0.1
