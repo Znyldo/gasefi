@@ -47,7 +47,7 @@ def format_change(val):
 
 def main():
     st.set_page_config(page_title="Gás e Eficiência", page_icon=":fire:",layout="wide")
-    st.title("Gas e Eficiência")
+    st.title("Gás e Eficiência")
     df_gas_viana1 = read_server_table('viana1')
     df_gas_lorm1 = read_server_table('lorm1')
     df_gas_povoacao = read_server_table('pov')
