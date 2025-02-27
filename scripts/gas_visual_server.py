@@ -347,7 +347,7 @@ def main():
                 st.info("Coluna 'Data' não encontrada.")
                 selected_row = df_gas_lorm.iloc[-1]
 
-        ignore_columns = ['Data', 'MWh', 'HeatRate', 'Efficiency_p', 'm3', 'm3_Corrigido', 'IW_kJ/m3', 'PCS_kcal/m3', 'PCI_Kcal/m3', 'm3/MWh', 'PCS_KJ/M3','NM', 'MWh_med','FatorPCS','Dens_Kg/m3','Dens_Rel ']
+        ignore_columns = ['Data', 'MWh', 'HeatRate', 'Efficiency_p', 'm3', 'm3_Corrigido', 'IW_kJpm3', 'PCS_kcalpm3', 'PCI_Kcalpm3', 'm3pMWh', 'PCS_KJpM3','NM', 'MWh_med','FatorPCS','Dens_Kgpm3','Dens_Rel']
         comp_columns = [col for col in df_gas_lorm.columns if col not in ignore_columns and 'Molar_mass_part' not in col and 'mass_frac' not in col and 'gpmol' not in col]
 
         col1, col2, col3, col4 = st.columns([0.25,0.15,0.25,0.25])
