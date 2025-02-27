@@ -7,11 +7,14 @@ from supabase import create_client, Client
 SUPABASE_URL = st.secrets['URL_SUPA']
 SUPABASE_KEY = st.secrets['KEY_SUPA']
 
-
+@st.cache_resource()
+def get_supabase_client():
+    return create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Cria o cliente Supabase
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+supabase: Client = get_supabase_client()
 
+@st.cache_data(ttl=3600, show_spinner=False)
 def read_server_table(table_name):
     response = (
         supabase.table(table_name).select("*").execute()
@@ -25,6 +28,7 @@ def read_server_table(table_name):
 
     return df
 
+@st.cache_data(ttl=3600, show_spinner=False)
 def read_server_table_lorm(lorm):
     response = (
         supabase.table(lorm).select("*").execute()
